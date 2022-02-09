@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class Calculator {
-    static void add(int a, int b) {
+    void add(int a, int b) {
         System.out.println("Sum is : " + a + b);
     }
 
-    static void divide(int a, int b) {
+    void divide(int a, int b) {
         if (b == 0) {
             System.out.println("cannot divide by zero");
             System.exit(0);
@@ -13,12 +13,12 @@ public class Calculator {
         System.out.println("The solution is : " + a / b);
     }
 
-    static void Sub(int a, int b) {
+    void Sub(int a, int b) {
         int c = a - b;
         System.out.println("The difference is : " + c);
     }
 
-    static void mod(int a, int b) {
+    void mod(int a, int b) {
         System.out.println("The Modulus is : " + (a % b));
     }
 
