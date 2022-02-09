@@ -14,11 +14,12 @@ public class Calculator {
     }
 
     static void Sub(int a, int b) {
-        System.out.println("The difference is : " + (a - b));
+        int c = a - b;
+        System.out.println("The difference is : " + c);
     }
 
     static void mod(int a, int b) {
-        System.out.println("The Modulus is : ");
+        System.out.println("The Modulus is : " + (a % b));
     }
 
     static void mul(int a, int b) {
@@ -52,5 +53,6 @@ public class Calculator {
             default:
                 System.out.println("Incorrect operation");
         }
+        sc.close();
     }
 }
