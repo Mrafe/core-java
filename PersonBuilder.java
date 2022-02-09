@@ -1,5 +1,5 @@
 class Person {
-    int id;
+    int id; // instance variable
     String name;
 
     public Person(int id, String name) {
@@ -9,7 +9,7 @@ class Person {
 }
 
 public class PersonBuilder {
-    private static Person buildPerson(int id, String name) {
+    private static Person buildPerson(int id, String name) { // factory method
         return new Person(id, name);
     }
 
