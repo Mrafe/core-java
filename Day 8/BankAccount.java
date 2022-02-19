@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 class BankAccount {
     int accNo;
@@ -47,6 +46,12 @@ class BankAccount {
                 this.accHolderName, this.accBalance);
     }
 
+    BankAccount getStatements() {
+        System.out.println("The account Holder Name: " + this.accHolderName + "\nThe account type is "
+                + this.getClass().getName());
+        return new BankAccount(this.accNo, this.accHolderName);
+    }
+
     BankAccount copy() {
         return new BankAccount(this.accNo, this.accHolderName, this.accBalance);
     }
@@ -74,6 +79,13 @@ class SavingsAccount extends BankAccount {
 
     double getYearlyInterest() {
         return this.getComputedInterest(1);
+    }
+
+    @Override
+    SavingsAccount getStatements() {
+        System.out.println("The account Holder Name: " + this.accHolderName + "\nThe account type is "
+                + this.getClass().getName());
+        return new SavingsAccount(this.accNo, this.accHolderName);
     }
 
     @Override
@@ -112,6 +124,13 @@ class CurrentAccount extends BankAccount {
     }
 
     @Override
+    CurrentAccount getStatements() {
+        System.out.println("The account Holder is: " + this.accHolderName + "\nThe account type : "
+                + this.getClass().getName());
+        return new CurrentAccount(this.accNo, this.accHolderName);
+    }
+
+    @Override
     CurrentAccount copy() {
         return new CurrentAccount(this.accNo, this.accHolderName, this.accBalance);
     }
@@ -143,55 +162,13 @@ class Main {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        BankAccount bank = new BankAccount(78213, "Kaneko", 1500);
+        SavingsAccount savings = new SavingsAccount(78214, "Nazuko", 2000);
+        CurrentAccount current = new CurrentAccount(78215, "Orihime", 1000);
 
-        System.out.println("Enter the number of Object");
-        int n = scanner.nextInt();
-        BankAccount[] bankArr = new BankAccount[n];
-        SavingsAccount[] savingsArr = new SavingsAccount[n];
-        CurrentAccount[] currentArr = new CurrentAccount[n];
-        BankAccount[] salaryArr = new BankAccount[n];
-
-        for (int i = 0; i < n; i++) {
-            bankArr[i] = new BankAccount(2342 + i, "User" + i);
-            savingsArr[i] = new SavingsAccount(2342 + i, "User" + i);
-            currentArr[i] = new CurrentAccount(2342 + i, "User" + i);
-            salaryArr[i] = salaryAccount(2342 + i, "User" + i);
-        }
-
-        for (int i = 0; i < n; i++) {
-            System.out.println(bankArr[i]);
-            System.out.println(savingsArr[i]);
-            System.out.println(currentArr[i]);
-            System.out.println(salaryArr[i]);
-        }
-
-        SavingsAccount obj1 = new SavingsAccount(7192020, "Kaneko");
-        SavingsAccount obj2 = obj1.copy();
-        System.out.println(obj2);
-        scanner.close();
-
-        // BankAccount generalAcc = new BankAccount(7192020, "Kaneko");
-        // SavingsAccount savingsAcc = new SavingsAccount(7192021, "Nezuko", 4000);
-        // CurrentAccount currentAcc = new CurrentAccount(40, 7192022, "Mistuaa", 6000);
-
-        // generalAcc.setAccBalance(2000);
-
-        // System.out.println(generalAcc);
-
-        // System.out.println(savingsAcc);
-        // System.out.println("The interest accumulation of Nezuko is : " +
-        // savingsAcc.getYearlyInterest());
-        // System.out
-        // .println("The interest accumulation of Nezuko over 5 years is : " +
-        // savingsAcc.getComputedInterest(5));
-
-        // System.out.println(currentAcc);
-        // System.out.println("The yearly transaction of Mistuaa : " +
-        // currentAcc.getYearlyTransaction());
-        // System.out.println(
-        // "The transaction amount of Mitsuaa for 90 days is : " +
-        // currentAcc.getTotalTransactionAmount(90));
+        System.out.println(bank.getStatements());
+        System.out.println(savings.getStatements());
+        System.out.println(current.getStatements());
 
     }
 }

@@ -1,4 +1,4 @@
-public class x {
+public class x  {
     public static void main(String argvs[]) {
         int var1 = 5;
         int var2 = 6;

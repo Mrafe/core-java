@@ -20,7 +20,7 @@ public class Grade {
         int phy = scanner.nextInt();
         int chem = scanner.nextInt();
         int maths = scanner.nextInt();
-        int marks = phy + chem + maths;
+        int marks = (phy + chem + maths) / 3;
         System.out.println("The grade is : " + grade(marks));
         scanner.close();
     }

@@ -141,9 +141,9 @@ class Circle extends Shape {
 
 class Geometry {
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle("Rectangle", 4, 5);
-        Square square = new Square("Square", 4);
-        Circle circle = new Circle("Circle", 4);
+        Shape rectangle = new Rectangle("Rectangle", 4, 5);
+        Shape square = new Square("Square", 4);
+        Shape circle = new Circle("Circle", 4);
 
         rectangle.calculateArea();
         rectangle.calculatePerimeter();
