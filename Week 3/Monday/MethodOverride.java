@@ -1,3 +1,5 @@
+package Day6;
+
 class Parent {
     String firstname;
     String lastname;
@@ -59,5 +61,5 @@ class Family {
 }
 
 // b.getClass().getSuperclass()
-//         .getMethod("method", new Class[]{} )
-//         .invoke(b.getClass().getSuperclass().newInstance() ,new Object[]{}) ;;
+// .getMethod("method", new Class[]{} )
+// .invoke(b.getClass().getSuperclass().newInstance() ,new Object[]{}) ;;

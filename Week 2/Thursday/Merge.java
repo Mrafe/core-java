@@ -7,8 +7,12 @@ public class Merge {
         while (i < size1 && j < size2) {
             if (arr1[i] < arr2[j])
                 arr3[k++] = arr1[i++];
-            else
+            else if (arr[i] > arr2[j])
                 arr3[k++] = arr2[j++];
+            else {
+                arr3[k++] = arr2[j++];
+                i++;
+            }
         }
         while (i < size1)
             arr3[k++] = arr1[i++];
